@@ -14,7 +14,7 @@ COURSES = [
 ]
 
 @app.get('/courses')
-async def read_all_courses():
+async def read_all_courses_timur ():
     return COURSES
 
 
