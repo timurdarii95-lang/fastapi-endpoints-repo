@@ -47,5 +47,9 @@ async def create_course(updated_course=Body()):
         if COURSES[i].get('title').casefold() == updated_course.get('title').casfold():
             COURSES[i] = updated_course
 
-# @app.delete('/courses/create_course')
-# async def delete_course(course_title()):
+@app.delete('/courses/create_course')
+async def delete_course(course_title: str()):
+    for i in range(len(COURSES)):
+        if COURSES[i].get('title').casefold() ==  course_title.get('title').casfold():
+            COURSES.POP(i)
+            break
